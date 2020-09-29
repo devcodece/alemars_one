@@ -1,0 +1,46 @@
+@import "abstract";
+
+.header{
+    background-color: var(--primary-color);
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    color: white;
+    
+}
+
+.main-section{
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: minmax(repeat(3, min-content));
+}
+
+.section-content{    
+    overflow: hidden;
+    background-color: white;
+    height: 75vh;
+}
+
+.section-new-products{
+    @include white-bk-mg-top;
+
+
+}
+
+.gallery-section{
+    @include white-bk-big-mg-top;
+
+}
+
+.footer{
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+    background-color: white;
+}
+
+
+
+
+
+
+
+

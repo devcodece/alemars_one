@@ -1,0 +1,138 @@
+//////////////////////////////////////////////////////////////////////////
+/********************************Slideshow Component**********************/
+//////////////////////////////////////////////////////////////////////////
+
+
+.slider{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    animation: slide_animation 10s 2s infinite;
+    //scroll-snap-type: x mandatory;
+
+
+    
+}
+
+.slide{
+    width: 100%;
+    flex-shrink: 0;
+    
+
+    &__product-photo{
+        width: 100%;
+        height: 80%;  
+        border: var(--primary-color-light-2) solid 0.2px;      
+    }
+
+    &__photo{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__product-detail{
+        margin-top: 2rem;
+        margin-right: 2rem;
+    }
+
+    
+}
+
+.section-new-products{
+    text-align: center;
+
+}
+
+.nw-product{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 4rem;
+    
+    
+    &__container{
+        background-color: rgb(240, 240, 240);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 40rem 1fr;
+                
+        
+    }
+
+    &__photo {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    &__new{
+        font-size: 1.5rem;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        background-color: var(--primary-color-light-2) ;
+        width: 15%;
+        align-self: end;
+        color: white;
+    
+        
+    }
+
+    &__detail{
+        padding-left: .8rem;
+        padding-bottom: .8rem;
+    }
+
+    &__name{
+        grid-column: 1/2;
+        
+    }
+    
+    &__price{
+        grid-column: 2 /3;
+    }
+
+    &__display-more{
+
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+/************************************ Buttons ****************************/
+//////////////////////////////////////////////////////////////////////////
+
+.btn{
+    
+    &:link,
+    &:visited{
+        display: inline-block;
+        font-size: 1.6rem;
+        text-decoration: none;        
+        font-weight: bold;        
+        padding: 2px;
+        
+        
+        
+    }
+
+    &--link{
+        color: var(--primary-color-dark);
+        border-bottom: 1px solid var(--primary-color);
+    }
+
+    &--red{
+        background-color: var(--primary-color);
+        color: white;
+        
+    }
+}
+

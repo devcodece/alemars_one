@@ -1,0 +1,42 @@
+.heading-primary-text{font-size: 2rem; font-weight: bold;}
+.heading-secondary-text{font-size: 1.8rem; font-weight: bold;}
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    font-size: 62.5%; // 10 / 16 = 62.5% -> 1rem = 10px
+    font-weight: 300; 
+}
+
+body{
+    font-family: var(--font-primary);
+    color: var(--gray-dark-2);
+    font-weight: 300;
+    line-height: 1.6;
+    background-color: rgb(245, 245, 245);
+}
+
+
+
+.page-container{
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 12rem min-content repeat(2, min-content);
+    grid-template-columns: 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
+    background-image: linear-gradient();
+    overflow-x: hidden;
+}
+
+
+
+
+
