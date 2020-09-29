@@ -8,9 +8,74 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>navbar</h1>
+    <div id="container" class="page-container">
+        <div id="navigationNav" class="navigation">
+            <nav id="navContent" class="menu-content">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#" class="navigation__link">New arrivals</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Women</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">More..</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Contact us</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+        <header class="header">            
+            <span class="menu" onclick="openNav()">
+                <svg width="32" height="32" class="menu__icon">
+                    <path fill-rule="evenodd" 
+                    d="M4 9h25v.5H4V9zm0 7.2h25v.5H4v-.5zm.3 7.3H4v.5h25v-.5H4.3z" 
+                    clip-rule="evenodd"></path>
+                </svg>
+                    
+            </span>
+            
 
-    {% block content %}
-    {% endblock content %}
+            <img src="{% static 'img/LogoAlemarWhite-small.png' %}" class="header__logo" alt="Logo Alemar Boutique">
+                        
+            <form class="search" action="#">
+                <svg class="menu__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.7 19.7">                                           
+                    <g fill="none" stroke="white">
+                        <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/>
+                    <circle cx="8" cy="8" r="7"/></g>
+                </svg>                
+            </form>
+
+            <nav class="user-nav">
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon" viewBox="0 0 32 32">
+                        <path d="M12 7V6c0-1 1-2 2-2h4c1 0 2 1 2 2v1h7v19H5V7h7zm14 1H6v17h20V8zM13 6v1h6V6c0-.5-.5-1-1-1h-4a1 1 0 0 0-1 1z"></path>
+                    </svg>
+                    <span>0</span>
+                </div>
+
+                <div class="user-nav__icon-box">
+                    <img src="" alt="user image">
+                </div>
+                                
+            </nav>
+        </header>
+
+        <main class="main-section">
+
+            {% block content %}
+            {% endblock content %}
+            
+        </main>
+        <footer class="footer">
+            <ul class="nav">
+                    <li class="nav__item"><a href="#" class="nav__link">About us</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Request proposal</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contact us</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Submit your questions</a></li>
+            </ul>
+            <p class="copyright">
+                &copy; Copyright 2020 Alemars Boutique.
+            </p>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/navigation.js' %}"></script>
+
 </body>
 </html>
