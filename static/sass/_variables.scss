@@ -25,5 +25,16 @@
 
     --font-primary: 'Nunito';
     --font-display: 'Josefin Sans', sans-serif;
+
 }
 
+// Margin/Padding
+
+$sm-gap-vertical: 1rem 0 1rem 0;
+$sm-gap-horizontal: 0 1rem 0 1rem;
+
+$md-gap-vertical: 2rem 0 2rem 0;
+$md-gap-horizontal: 0 2rem 0 2rem;
+
+$lg-gap-vertical: 3rem 0 3rem 0;
+$lg-gap-horizontal: 0 3rem 0 3rem;

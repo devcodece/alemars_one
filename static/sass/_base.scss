@@ -1,5 +1,8 @@
-.heading-primary-text{font-size: 2rem; font-weight: bold;}
-.heading-secondary-text{font-size: 1.8rem; font-weight: bold;}
+@use 'variables';
+
+.heading-primary-text{font-size: 2.2rem; font-weight: 300; padding: variables.$lg-gap-vertical;}
+.heading-secondary-text{font-size: 1.8rem; font-weight: 400; padding: variables.$md-gap-vertical;}
+
 
 
 *,
