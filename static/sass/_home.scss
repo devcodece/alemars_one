@@ -10,8 +10,9 @@
 
 .main-section{
     display: grid;
+    grid-template-rows: repeat(2,min-content);
     grid-column: 1 / -1;
-    grid-row: minmax(repeat(3, min-content));
+    grid-row: 2 / 3;
 }
 
 .section-content{    
@@ -23,7 +24,6 @@
 .section-new-products{
     @include white-bk-mg-top;
 
-
 }
 
 .gallery-section{
@@ -32,7 +32,6 @@
 }
 
 .footer{
-    grid-row: 3 / 4;
     grid-column: 1 / -1;
     background-color: white;
 }

@@ -1,4 +1,4 @@
-.navigation{
+.navigation-wrapper{
     position: fixed;
     width: 0;
     height: 100%;
@@ -10,26 +10,28 @@
     
 
 
-    &__list{
-        list-style: none;
-        
-    }
 
-    &__item{
-        padding:2rem;
-    }
-
-    &__link{
-        text-decoration: none;
-        font-size: 2.5rem;
-        color:var(--light-gray-1);
-        display: block;
-        white-space: nowrap;
- 
-    }
 }
 
-.menu-content{
+.navigation__list{
+    list-style: none;
+    
+}
+
+.navigation__item{
+    padding:2rem;
+}
+
+.navigation__link{
+    text-decoration: none;
+    font-size: 2.5rem;
+    color:var(--light-gray-1);
+    display: block;
+    white-space: nowrap;
+
+}
+
+.navigation{
     background-color: var(--primary-color-light-1);
     position: relative;
     width: 0;

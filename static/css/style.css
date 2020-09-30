@@ -244,8 +244,9 @@ body {
 
 .main-section {
   display: grid;
+  grid-template-rows: repeat(2, min-content);
   grid-column: 1/-1;
-  grid-row: minmax(repeat(3, min-content));
+  grid-row: 2/3;
 }
 
 .section-content {
@@ -265,7 +266,6 @@ body {
 }
 
 .footer {
-  grid-row: 3/4;
   grid-column: 1/-1;
   background-color: white;
 }
@@ -318,7 +318,7 @@ body {
   width: 70%;
 }
 
-.navigation {
+.navigation-wrapper {
   position: fixed;
   width: 0;
   height: 100%;
@@ -328,12 +328,15 @@ body {
   overflow-x: hidden;
   transition: all 0.4s;
 }
+
 .navigation__list {
   list-style: none;
 }
+
 .navigation__item {
   padding: 2rem;
 }
+
 .navigation__link {
   text-decoration: none;
   font-size: 2.5rem;
@@ -342,7 +345,7 @@ body {
   white-space: nowrap;
 }
 
-.menu-content {
+.navigation {
   background-color: var(--primary-color-light-1);
   position: relative;
   width: 0;
