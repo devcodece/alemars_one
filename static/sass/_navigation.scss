@@ -13,24 +13,6 @@
 
 }
 
-.navigation__list{
-    list-style: none;
-    
-}
-
-.navigation__item{
-    padding:2rem;
-}
-
-.navigation__link{
-    text-decoration: none;
-    font-size: 2.5rem;
-    color:var(--light-gray-1);
-    display: block;
-    white-space: nowrap;
-
-}
-
 .navigation{
     background-color: var(--primary-color-light-1);
     position: relative;
@@ -41,5 +23,24 @@
     overflow: hidden;
     padding-top: 6rem;
     transition: width .4s cubic-bezier(.92,-0.72,.55,1.69);
+
+
+    &__list{
+        list-style: none;
+        
+    }
+
+    &__item{
+        padding:2rem;
+    }
+
+    &__link{
+        text-decoration: none;
+        font-size: 2.5rem;
+        color:var(--light-gray-1);
+        display: block;
+        white-space: nowrap;
+
+    }
     
 }

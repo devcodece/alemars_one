@@ -9,6 +9,14 @@
 </head>
 <body>
     <div id="container" class="page-container">
+        <h1><a href="#" id="addCartAmount" class="btn--center">Add to cart</a></h1>
+        <div id="searchFormWrapper" class="search-form-wrapper">
+            <div id="searchForm" class="search-form">
+                <label for="search-input">Search</label>
+                <input type="text" id="search-input">
+            </div>
+        </div>
+
         <div id="navigationNav" class="navigation-wrapper">
             <nav id="navContent" class="navigation">
                 <ul class="navigation__list">
@@ -21,8 +29,8 @@
             </nav>
         </div>
         <header class="header">            
-            <span class="menu" onclick="openNav()">
-                <svg width="32" height="32" class="menu__icon">
+            <span class="btn--open-nav" onclick="openNav()">
+                <svg width="32" height="32" class="icon">
                     <path fill-rule="evenodd" 
                     d="M4 9h25v.5H4V9zm0 7.2h25v.5H4v-.5zm.3 7.3H4v.5h25v-.5H4.3z" 
                     clip-rule="evenodd"></path>
@@ -33,24 +41,29 @@
 
             <img src="{% static 'img/LogoAlemarWhite-small.png' %}" class="header__logo" alt="Logo Alemar Boutique">
                         
-            <form class="search" action="#">
-                <svg class="menu__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.7 19.7">                                           
-                    <g fill="none" stroke="white">
-                        <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/>
-                    <circle cx="8" cy="8" r="7"/></g>
-                </svg>                
-            </form>
+            <section class="search" >
+                <span class="icon-search" onclick="openSearchForm()">
+                    <svg class="icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.7 19.7">                                           
+                        <g fill="none" stroke="white">
+                            <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/>
+                        <circle cx="8" cy="8" r="7"/></g>
+                    </svg>   
+                </span>             
+            </section>
 
             <nav class="user-nav">
-                <div class="user-nav__icon-box">
-                    <svg class="user-nav__icon" viewBox="0 0 32 32">
-                        <path d="M12 7V6c0-1 1-2 2-2h4c1 0 2 1 2 2v1h7v19H5V7h7zm14 1H6v17h20V8zM13 6v1h6V6c0-.5-.5-1-1-1h-4a1 1 0 0 0-1 1z"></path>
-                    </svg>
-                    <span>0</span>
-                </div>
 
                 <div class="user-nav__icon-box">
-                    <img src="" alt="user image">
+                    <a href="" class="user-nav__cart">
+                        <svg class="icon user-nav__cart-icon" viewBox="0 0 32 32">
+                            <path d="M12 7V6c0-1 1-2 2-2h4c1 0 2 1 2 2v1h7v19H5V7h7zm14 1H6v17h20V8zM13 6v1h6V6c0-.5-.5-1-1-1h-4a1 1 0 0 0-1 1z"></path>
+                        </svg>
+                        <span id="counterAmount" class="user-nav__cart-amount">0</span>
+                    </a>                    
+                </div>
+
+                <div class="user-nav__image user-nav__icon-box">
+                    <img src="" alt="img">
                 </div>
                                 
             </nav>
@@ -74,8 +87,6 @@
             </p>
         </footer>
     </div>
-
     <script src="{% static 'js/navigation.js' %}"></script>
-
 </body>
 </html>
