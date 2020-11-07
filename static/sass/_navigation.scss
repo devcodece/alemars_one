@@ -1,0 +1,46 @@
+.navigation-wrapper{
+    position: fixed;
+    width: 0;
+    height: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: all .4s;
+    
+
+
+
+}
+
+.navigation{
+    background-color: var(--primary-color-light-1);
+    position: relative;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 6rem;
+    transition: width .4s cubic-bezier(.92,-0.72,.55,1.69);
+
+
+    &__list{
+        list-style: none;
+        
+    }
+
+    &__item{
+        padding:2rem;
+    }
+
+    &__link{
+        text-decoration: none;
+        font-size: 2.5rem;
+        color:var(--light-gray-1);
+        display: block;
+        white-space: nowrap;
+
+    }
+    
+}

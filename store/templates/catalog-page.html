@@ -1,0 +1,73 @@
+{% extends 'main.html'%}
+{% load static %}
+{% block content %}
+
+<section class="catalog">
+
+    <div class="catalog__product">
+        <div class="catalog__photo">
+            <img class="catalog__img" src="{% static 'img/galle-4.jpg' %}" alt="">
+        </div>
+        <span id="newTag" class="catalog__new-tag">
+            New               
+        </span>
+        <div class="catalog__detail">
+            <ul class="detail__list">
+                <li>Product name: </li>
+                <li>Price: </li>                        
+            </ul>
+        </div>
+        <button class="btn--shop">Shop now</button>
+    </div>
+
+    <div class="catalog__product">
+        <div class="catalog__photo">
+            <img class="catalog__img" src="{% static 'img/galle-3.jpg' %}" alt="">
+        </div>
+        <span id="newTag" class="catalog__new-tag">
+                        
+        </span>
+        <div class="catalog__detail">
+            <ul class="detail__list">
+                <li>Product name: </li>
+                <li>Price: </li>                        
+            </ul>
+        </div>
+        <button class="btn--shop">Shop now</button>
+    </div>
+
+    <div class="catalog__product">
+        <div class="catalog__photo">
+            <img class="catalog__img" src="{% static 'img/galle-1.jpg' %}" alt="">
+        </div>
+        <span id="newTag" class="catalog__new-tag">
+            New               
+        </span>
+        <div class="catalog__detail">
+            <ul class="detail__list">
+                <li>Product name: </li>
+                <li>Price: </li>                        
+            </ul>
+        </div>
+        <button class="btn--shop">Shop now</button>
+    </div>
+
+    <div class="catalog__product">
+        <div class="catalog__photo">
+            <img class="catalog__img" src="{% static 'img/galle-2.jpg' %}" alt="">
+        </div>
+        <span id="newTag" class="catalog__new-tag">
+                        
+        </span>
+        <div class="catalog__detail">
+            <ul class="detail__list">
+                <li>Product name: </li>
+                <li>Price: </li>                        
+            </ul>
+        </div>
+        <button class="btn--shop">Shop now</button>
+    </div>
+</section>
+
+
+{% endblock content %}

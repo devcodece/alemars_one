@@ -1,0 +1,25 @@
+@keyframes slide_animation {
+
+    0%, 5%, 15%, 100%{
+
+        transform: translateX(0);
+    }
+    25%, 30%, 40%{
+        transform: translateX(-100%);
+    }
+    50%, 60%, 65%{
+        transform: translateX(-200%);
+    }
+
+}
+//white background & top margin
+
+@mixin white-bk-mg-top {
+    margin-top: 10px;
+    background-color: var(--bk-light-color);
+}
+
+@mixin white-bk-big-mg-top {
+    margin-top: 2rem;
+    background-color: var(--bk-light-color);
+}
