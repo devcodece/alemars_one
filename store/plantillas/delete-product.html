@@ -1,0 +1,44 @@
+{% extends 'main-form.html' %}
+{% load static %}
+{% block style %}
+<style>
+    ul {
+        list-style: none;
+    }
+</style>
+{% endblock style %}
+{% block content %}
+<div class="container">
+    <div class="myCard">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="myLeftCtn">
+                    <form class="myForm" method="post">
+                        {% csrf_token %}
+                        <p><strong>Are you sure you want to delete {{ object }}?</strong></p>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <input type="submit" class="butt btn-block" value="Confirm">
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                        
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="myRightCtn">
+                    <div class="box">
+                        <header>Delete Product</header>
+                        <h4></h4>
+                        <a type="button" class="butt_out" style="text-decoration: none;" href="{% url 'crud-page' %}">Come back to home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

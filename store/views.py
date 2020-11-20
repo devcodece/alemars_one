@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import View, ListView, DetailView, CreateView, UpdateView
+from django.views.generic import View, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views.generic.edit import FormMixin
 from . models import TdtProduct
 from . forms import TdtProductForm
@@ -83,7 +83,7 @@ class CrudProduct(ListView):
 
 class UpdateProduct(UpdateView):
     model = TdtProduct
-    template_name = 'update-product.html'
+    template_name = 'update.html'
     form_class = TdtProductForm
     success_url = reverse_lazy('crud-product')
 
@@ -95,12 +95,16 @@ class UpdateProduct(UpdateView):
         #return context
 
 
-class ProductCreateView(CreateView):
-
-    template_name = 'create-product.html'
+class CreateProduct(CreateView):
     model = TdtProduct
+    template_name = 'create.html'
     form_class = TdtProductForm
-    success_url = 'catalog-page'
+    success_url = reverse_lazy('crud-product')
+
+
+class DeleteProduct(DeleteView):
+    model = TdtProduct
+    success_url = reverse_lazy('crud-product')
 
 
 class ProductCatalogListView(ListView):

@@ -1,0 +1,29 @@
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Deleteee Product?</h3>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <div class="myCard">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="myLeftCtn">
+                            <form action="{% url 'delete' object.id %}" class="myForm" method="post">
+                                {% csrf_token %}
+                                <p><strong>Are you sure you want to delete {{ object }}?</strong></p>
+                                <br>
+                                <button type="submit" class="btn btn-danger">
+                                    
+                                    Confirm!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        .
+    </div>
+</div>

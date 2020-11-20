@@ -1,0 +1,116 @@
+{% extends 'main.html'%}
+{% load static %}
+{% block content %}
+
+<section class="section-content">                
+    <div class="slider">
+        <div class="slide" id="slide-1">
+            <div class="slide__product-photo">
+                <img class="slide__photo" src="{% static 'img/csel-1.jpg' %}" alt="">
+            </div>
+            <div class="slide__product-detail">
+                <a class="btn btn--link" href="#" >Shop now</a>
+            </div>                        
+        </div>
+        <div class="slide" id="slide-2">
+            <div class="slide__product-photo">
+                <img class="slide__photo" src="{% static 'img/csel-2.jpg' %}" alt="">
+            </div>
+            <div class="slide__product-detail">
+                <a class="btn btn--link" href="#" >Shop now</a>
+            </div> 
+        </div>
+        <div class="slide" id="slide-3">
+            <div class="slide__product-photo">
+                <img class="slide__photo" src="{% static 'img/csel-3.jpg' %}" alt="">
+            </div>
+            <div class="slide__product-detail">
+                <a class="btn btn--link" href="#" >Shop now</a>
+            </div> 
+        </div>
+    </div>
+</section>
+
+
+<section class="section-new-products">
+    <h1 class="heading-primary-text">New products</h1>
+    <div class="nw-product">
+        <div class="nw-product__container">                                   
+            <img class="nw-product__photo" src="{% static 'img/nw-item-1.jpg' %}" alt="">
+            <h2 class="nw-product__new">New</h2>
+            
+                <h2 class="nw-product__name">Set of brallete</h2>
+                <h2 class="nw-product__price">$ 55.00</h2>                            
+            
+        </div>
+
+        <div class="nw-product__container">                                   
+            <img class="nw-product__photo" src="{% static 'img/nw-item-2.jpg' %}" alt="">
+            <h2 class="nw-product__new">New</h2>
+            
+                <h2 class="nw-product__name">Set of brallete</h2>
+                <h2 class="nw-product__price">$ 55.00</h2>                            
+            
+        </div>
+
+        <div class="nw-product__container">                                   
+            <img class="nw-product__photo" src="{% static 'img/nw-item-3.jpg' %}" alt="">
+            <h2 class="nw-product__new">New</h2>
+            
+                <h2 class="nw-product__name">Set of brallete</h2>
+                <h2 class="nw-product__price">$ 55.00</h2>                            
+            
+        </div>
+
+
+    </div>
+    <div class="display-more">
+        <a class="btn btn--red" href="#">See more</a>
+    </div>
+
+</section>
+
+
+<section class="gallery-section">
+    <h2 class="heading-secondary-text">Trending</h2>
+    <div class="gallery">
+        <figure class="gallery__item gallery__item--1">
+            <img src="{% static 'img/galle-1.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>	
+
+        <figure class="gallery__item gallery__item--2">
+            <img src="{% static 'img/galle-2.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>
+
+        <figure class="gallery__item gallery__item--3">
+            <img src="{% static 'img/galle-3.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>
+
+        <figure class="gallery__item gallery__item--4">
+            <img src="{% static 'img/galle-4.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>
+
+        <figure class="gallery__item gallery__item--5">
+            <img src="{% static 'img/galle-5.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>
+
+        <figure class="gallery__item gallery__item--6">
+            <img src="{% static 'img/galle-6.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>
+
+
+        <figure class="gallery__item gallery__item--7">
+            <img src="{% static 'img/galle-7.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>
+
+        <figure class="gallery__item gallery__item--8">
+            <img src="{% static 'img/galle-8.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>
+
+        <figure class="gallery__item gallery__item--9">
+            <img src="{% static 'img/galle-9.jpg' %}" alt="Gallery 1" class="gallery__img">
+        </figure>	
+    </div>                
+</section>
+
+{% endblock content %}
