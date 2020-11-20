@@ -10,7 +10,7 @@
   --light-gray-2: #AAA;
   --dark-gray-1: #54483A;
   --dark-gray-2: #6D5D4B;
-  --font-primary: "Nunito";
+  --font-primary: "Quicksand";
   --font-display: "Josefin Sans", sans-serif;
 }
 
@@ -35,7 +35,7 @@
 }
 
 html {
-  font-family: "Nunito", sans-serif;
+  font-family: "Quicksand", sans-serif;
   box-sizing: border-box;
   font-size: 62.5%;
   font-weight: 300;

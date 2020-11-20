@@ -1,0 +1,121 @@
+/* .container {
+    position: absolute;
+    max-width: 800px;
+    height: 667px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.myRightCtn {
+    position: relative;
+    background: linear-gradient(45deg, #417690, #70ccfa);
+    /* background-image: linear-gradient(45deg, #A31D00, #FF7557); */
+    border-radius: 25px;
+    height: 100%;
+    padding: 25px;
+    color: #fff;    
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myLeftCtn {
+    position: relative;
+    background: #fff;
+    border-radius: 25px;
+    height: 100%;
+    padding: 25px;
+    padding-left: 50px;
+}
+
+.myLeftCtn header {
+    color: brown;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}   
+
+.row {
+    height: 100%;
+}
+
+.myCard {
+    position: relative;
+    background: #fff;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+}
+
+.myRightCtn header {
+    color: #fff;
+    font-size: 44px;
+}
+
+.box {
+    position: relative;
+    margin: 20px;
+    margin-bottom: 100px;
+}
+
+/* .myLeftCtn .myInput{
+    width: 230px;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 50px;
+    border: none;
+    -webkit-box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.7);
+    box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.7);
+} */
+
+.myLeftCtn .butt {
+
+    /*background: linear-gradient(45deg, #A31D00, #FF7557);*/
+    background: linear-gradient(45deg, #417690, #70ccfa);
+    color: #fff;
+    width: 230px;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+}
+
+.myLeftCtn .butt:hover {
+    /* background: linear-gradient(45deg, #70ccfa, #b6e7ff); */
+    background: #59c6fc;
+}
+
+.myLeftCtn .fas {
+    position: relative;
+    color: tomato;
+    left: 36px;
+}
+
+.butt_out {
+    background: transparent;
+    color: #fff;
+    width: 140px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+}
+
+.butt_out:hover {
+    border: 2px solid #eecbff;
+    color: #eecbff;
+}
+
+.butt_out:focus {
+    outline: none;
+}

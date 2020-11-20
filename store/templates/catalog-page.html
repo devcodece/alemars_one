@@ -3,24 +3,30 @@
 {% block content %}
 
 <section class="catalog">
-
+    {% for p in products %}
     <div class="catalog__product">
         <div class="catalog__photo">
-            <img class="catalog__img" src="{% static 'img/galle-4.jpg' %}" alt="">
+            <img class="catalog__img" 
+            src="{% if p.img_photo1.url is not null %}
+                    {{ p.img_photo1.url }}
+                {% else %}
+                    {% static 'img/img-404.png' %}
+                {% endif %}" 
+            alt="">
         </div>
         <span id="newTag" class="catalog__new-tag">
             New               
         </span>
         <div class="catalog__detail">
             <ul class="detail__list">
-                <li>Product name: </li>
-                <li>Price: </li>                        
+                <li> {{ p.tx_product_name }} </li>
+                <li>${{ p.nm_sale_unit }} </li>                        
             </ul>
         </div>
         <button class="btn--shop">Shop now</button>
     </div>
-
-    <div class="catalog__product">
+    {% endfor %}
+    <!-- <div class="catalog__product">
         <div class="catalog__photo">
             <img class="catalog__img" src="{% static 'img/galle-3.jpg' %}" alt="">
         </div>
@@ -34,9 +40,9 @@
             </ul>
         </div>
         <button class="btn--shop">Shop now</button>
-    </div>
+    </div> -->
 
-    <div class="catalog__product">
+    <!-- <div class="catalog__product">
         <div class="catalog__photo">
             <img class="catalog__img" src="{% static 'img/galle-1.jpg' %}" alt="">
         </div>
@@ -46,13 +52,15 @@
         <div class="catalog__detail">
             <ul class="detail__list">
                 <li>Product name: </li>
+                <span style="width: 45px; height: 20px; border: 1px solid black; 
+                background: green">Green</span>
                 <li>Price: </li>                        
             </ul>
         </div>
         <button class="btn--shop">Shop now</button>
-    </div>
+    </div> -->
 
-    <div class="catalog__product">
+    <!-- <div class="catalog__product">
         <div class="catalog__photo">
             <img class="catalog__img" src="{% static 'img/galle-2.jpg' %}" alt="">
         </div>
@@ -66,7 +74,7 @@
             </ul>
         </div>
         <button class="btn--shop">Shop now</button>
-    </div>
+    </div> -->
 </section>
 
 
