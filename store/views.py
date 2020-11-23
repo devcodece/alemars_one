@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views.generic.edit import FormMixin
-from . models import TdtProduct
+from . models import TdtProduct, CdtColor
 from . forms import TdtProductForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
@@ -18,7 +18,7 @@ class CrudProduct(ListView):
     context_object_name = 'products'
     form_class = TdtProductForm
 
-
+    
 #class CrudProduct(ListView):
     #model = TdtProduct
     #template_name = 'crud-product.html'
@@ -33,9 +33,21 @@ class CrudProduct(ListView):
     #Asignar a get_queryset el context products
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form'] = TdtProductForm()
-        #context['products'] = object_list
+        context['colors'] = TdtProduct.objects.filter(
+            tdtproduct_cdtcolor__id=CdtColor.objects.get('id_product')
+        )
+        #context['products'] = TdtProduct.objects.all
         return context
+    
+    #def colors_by_product(self):
+        #id = self.request.pk
+        #print(id + ' ' + '=======')
+        
+        #colors = CdtColor.objects.filter(
+        #    color_product__id_product='35'
+        #)
+        #print(colors + ' ' + '=======')
+        #return colors
     
     #Renderizando el template y pasando el context
     #def get(self, request, *args, **kwargs):
@@ -107,7 +119,7 @@ class DeleteProduct(DeleteView):
     success_url = reverse_lazy('crud-product')
 
 
-class ProductCatalogListView(ListView):
+class ProductCatalogList(ListView):
 
     model = TdtProduct
     template_name = 'catalog-page.html'

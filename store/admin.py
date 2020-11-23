@@ -5,8 +5,9 @@ from . models import (
     CdtBrand,
     CdtVendor,
     CdtColor,
-    CdtSize,
-    TdtProduct)
+    TdtProduct,
+    CdtProductPhoto,
+    )
 
 
 class CdtCategoryAdmin(admin.ModelAdmin):
@@ -21,19 +22,25 @@ class CdtBrandAdmin(admin.ModelAdmin):
 class CdtVendorAdmin(admin.ModelAdmin):
     list_display = ('tx_name_vendor',)
 
+class TdtProductAdmin(admin.ModelAdmin):
+    list_display = ('id', 'tx_product_name',)
+
 class CdtColorAdmin(admin.ModelAdmin):
     list_display = ('tx_name_color',)
 
-class CdtSizeAdmin(admin.ModelAdmin):
-    list_display = ('tx_name_size',)
+class CdtProductPhotoAdmin(admin.ModelAdmin):
+    list_display = ('tx_url_photo',)
 
-class TdtProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'tx_product_name',)
+""" class CdtSizeAdmin(admin.ModelAdmin):
+    list_display = ('tx_name_size',) """
+
+
 
 admin.site.register(CdtCategory, CdtCategoryAdmin)
 admin.site.register(CdtSubcategory, CdtSubcategoryAdmin)
 admin.site.register(CdtBrand, CdtBrandAdmin)
 admin.site.register(CdtVendor, CdtVendorAdmin)
-admin.site.register(CdtColor, CdtColorAdmin)
-admin.site.register(CdtSize, CdtSizeAdmin)
+#admin.site.register(CdtSize, CdtSizeAdmin)
 admin.site.register(TdtProduct, TdtProductAdmin)
+admin.site.register(CdtColor, CdtColorAdmin)
+admin.site.register(CdtProductPhoto, CdtProductPhotoAdmin)

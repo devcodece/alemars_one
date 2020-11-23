@@ -8,7 +8,7 @@
 <div class="container">
     <!-- OPEN MODAL CREATE -->
     <div class="row">
-        <button class="btn btn-success btn-block" type="button" onclick="open_modal_create('{% url 'create' %}')">New Product</button>
+        <button class="btn btn-success btn-block" type="button">New Product</button>
     </div>
     <div class="row">
         <div class="col-sm">
@@ -21,34 +21,31 @@
                         <th scope="col">Product Name</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Price</th>
-                        <th scope="col">Color</th>
+                        <th scope="col">Colors</th>
                         <th scope="col">Size</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for p in products %}
+                    
                     <tr>
                         <td class="w-25">
-                            <img src="{% if p.img_photo1.url is not null %}
-                            {{ p.img_photo1.url }}
-                        {% else %}
-                            {% static 'img/img-404.png' %}
-                        {% endif %}"  width="25%" class="img-fluid img-thumbnail" alt="Sheep">
+                            <img src="{% static 'img/img-404.png' %}"  width="25%" class="img-fluid img-thumbnail" alt="Sheep">
                         </td>
                         <td>{{ p.tx_product_name }}</td>
                         <td>0</td>
-                        <td>${{ p.nm_sale_unit }}</td>
-                        <td>{{ p.color }}</td>
-                        <td>{{ p.size }}</td>
+                        <td>$0.00</td>
+                        <td>{% for c in colors %}{{ c.tx_name_color }}{% endfor %}</td>
+                        <td>{{p.id}}</td>
                         <td>
                             <!-- Abrir MODAL UPDATE -->
-                            <button onclick="open_modal_edit('{% url 'edit-product' p.id %}')" class="btn btn-primary">
+                            <button class="btn btn-primary">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </button>
                              
-                            <button onclick="open_modal_delete('{% url 'delete' p.id %}')" class="btn btn-danger">
+                            <button class="btn btn-danger">
                                 <i class="fa fa-trash"></i>
                                 Delete
                             </button>
