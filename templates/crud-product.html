@@ -36,7 +36,8 @@
                         <td>{{ p.tx_product_name }}</td>
                         <td>0</td>
                         <td>$0.00</td>
-                        <td>{% for c in colors %}{{ c.tx_name_color }}{% endfor %}</td>
+                        <td>{% for c in p.id_color.all %}{{c.tx_name_color}}{% endfor %}</td>
+                        <!-- for c in p.cdtcolor_set.all -->
                         <td>{{p.id}}</td>
                         <td>
                             <!-- Abrir MODAL UPDATE -->

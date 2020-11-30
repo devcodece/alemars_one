@@ -1,8 +1,20 @@
 from django.db import models
 from . managers import ColorManager, CdtProductManager
 
+
+class CdtCategoryPerson(models.Model):
+    tx_category_person = models.CharField('Category Person', max_length=50)
+
+    class Meta:
+        verbose_name = 'Category Person'
+        verbose_name_plural = 'Categories Persons'
+
+    def __str__(self):
+        return self.tx_category_person
+
 class CdtCategory(models.Model):
     tx_category_name = models.CharField(max_length=50)
+    id_category_person = models.ForeignKey(CdtCategoryPerson, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = 'Category'
@@ -46,38 +58,9 @@ class CdtVendor(models.Model):
         return self.tx_name_vendor
 
 
-class TdtProduct(models.Model):
-    GENDER_CHOICES = [
-        ('0', 'Gender'),
-        ('1', 'Male'),
-        ('2', 'Female'),
-        ('3', 'Other'),
-    ]
-
-    tx_product_name = models.CharField('Product Name', max_length=75)
-    tx_description = models.TextField('Description', max_length=300)
-    gender = models.CharField('Gender', max_length=2, choices=GENDER_CHOICES, default='0')
-    #nm_sale_unit = models.DecimalField(max_digits=8, decimal_places=2)
-    id_subcategory = models.ForeignKey(CdtSubcategory, on_delete=models.CASCADE)
-    id_brand = models.ForeignKey(CdtBrand, on_delete=models.CASCADE)
-    id_vendor = models.ForeignKey(CdtVendor, on_delete=models.CASCADE)
-    #id_color = models.ManyToManyField(CdtColor)
-    #size = models.ForeignKey(CdtSize, on_delete=models.CASCADE, blank=True, null=True)
-    #img_photo1 = models.ImageField(null=True, blank = True)
-    #img_photo2 = models.ImageField(null=True, blank = True)
-    #img_photo3 = models.ImageField(null=True, blank = True)
-    
-    class Meta:
-        verbose_name = 'Product'
-        verbose_name_plural = 'Products'
-
-    def __str__(self):
-        return self.tx_product_name
-
-
 class CdtColor(models.Model):
     tx_name_color = models.CharField(max_length=50)
-    id_product = models.ForeignKey(TdtProduct, on_delete=models.CASCADE, related_name='tdtproduct_cdtcolor')
+    #id_product = models.ForeignKey(TdtProduct, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Color'
@@ -92,7 +75,7 @@ class CdtColor(models.Model):
 class CdtProductPhoto(models.Model):
     tx_url_photo = models.ImageField('Photo', null=True, blank=True)
     bl_primary = models.BooleanField('Primary', default=False)
-    id_color = models.ForeignKey(CdtColor, on_delete = models.CASCADE)
+    #id_color = models.ForeignKey(CdtColor, on_delete = models.CASCADE)
     
     class Meta:
         verbose_name = 'Photo'
@@ -104,14 +87,57 @@ class CdtProductPhoto(models.Model):
         return str(self.tx_url_photo)
 
 
+class TdtProduct(models.Model):
+    #GENDER_CHOICES = [
+    #    ('0', 'Gender'),
+    #    ('1', 'Male'),
+    #    ('2', 'Female'),
+    #    ('3', 'Other'),
+    #]
+
+    tx_product_name = models.CharField('Product Name', max_length=75)
+    tx_description = models.TextField('Description', max_length=300)
+    id_category_person = models.ForeignKey(CdtCategoryPerson, on_delete=models.CASCADE, null=True)
+    #nm_sale_unit = models.DecimalField(max_digits=8, decimal_places=2)
+    id_category = models.ForeignKey(CdtCategory, on_delete=models.CASCADE, null=True)
+    id_subcategory = models.ForeignKey(CdtSubcategory, on_delete=models.CASCADE)
+    id_brand = models.ForeignKey(CdtBrand, on_delete=models.CASCADE)
+    id_vendor = models.ForeignKey(CdtVendor, on_delete=models.CASCADE)
+    id_color = models.ManyToManyField(CdtColor)
+    #size = models.ForeignKey(CdtSize, on_delete=models.CASCADE, blank=True, null=True)
+    id_photo = models.ManyToManyField(CdtProductPhoto)
+    #img_photo2 = models.ImageField(null=True, blank = True)
+    #img_photo3 = models.ImageField(null=True, blank = True)
+    
+    class Meta:
+        verbose_name = 'Product'
+        verbose_name_plural = 'Products'
+
+    def __str__(self):
+        return self.tx_product_name
+
 class CdtSize(models.Model):
-    tx_name_size = models.CharField(max_length=4)
+    size = models.CharField('Size', max_length=4)
+    id_category = models.ForeignKey(CdtCategory, on_delete=models.PROTECT, null=True)
 
     class Meta:
         verbose_name = 'Size'
         verbose_name_plural = 'Sizes'
-
+    
     def __str__(self):
-        return self.tx_name_size
+        return self.size
 
+class TdtSkuProduct(models.Model):
+    sku = models.CharField('Sku', max_length=75)
+    id_product = models.ForeignKey(TdtProduct, on_delete=models.PROTECT)
+    id_product_color = models.ForeignKey(CdtColor, on_delete=models.PROTECT)
+    id_size = models.ForeignKey(CdtSize, on_delete=models.PROTECT)
+    quantity = models.PositiveIntegerField('Quantity')
+    price = models.DecimalField('Price', max_digits=9, decimal_places=2)
 
+    class Meta:
+        verbose_name = 'SKU Product'
+        verbose_name_plural = 'SKU Products'
+    
+    def __str__(self):
+        return self.sku

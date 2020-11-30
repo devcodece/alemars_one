@@ -13,6 +13,7 @@ def home(request):
 
 class CrudProduct(ListView):
     model = TdtProduct
+    #model_two = CdtColor
     template_name = 'crud-product.html'
     paginate_by = 6
     context_object_name = 'products'
@@ -28,27 +29,15 @@ class CrudProduct(ListView):
 
     #Retorna consulta de todos los productos
     #def get_queryset(self):
-    #    return self.model.objects.all()
-    
+    #    return self.    .all()
+        
     #Asignar a get_queryset el context products
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['colors'] = TdtProduct.objects.filter(
-            tdtproduct_cdtcolor__id=CdtColor.objects.get('id_product')
-        )
-        #context['products'] = TdtProduct.objects.all
+        #context['color'] = CdtColor.objects.all()
+        #print(color + '===================')
         return context
-    
-    #def colors_by_product(self):
-        #id = self.request.pk
-        #print(id + ' ' + '=======')
-        
-        #colors = CdtColor.objects.filter(
-        #    color_product__id_product='35'
-        #)
-        #print(colors + ' ' + '=======')
-        #return colors
-    
+
     #Renderizando el template y pasando el context
     #def get(self, request, *args, **kwargs):
         #return render(request, self.template_name, self.get_context_data())
