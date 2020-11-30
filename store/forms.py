@@ -55,21 +55,22 @@ class TdtProductForm(forms.ModelForm):
             
         }
 
-class NewProduct(forms.Form):
+class NewProductForm(forms.Form):
     name = forms.CharField(max_length=75)
     description = forms.CharField(max_length=300)
-    id_category_person = forms.CharField(max_length=50)
-    id_category = forms.CharField(max_length=50)
-    id_subcategory = forms.CharField(max_length=50)
-    id_brand = forms.CharField(max_length=50)
-    id_vendor = forms.CharField(max_length=50)
-    id_color = forms.CharField(max_length=50)
-    id_photo = forms.CharField(max_length=100)
+    idcat_person = forms.ChoiceField(max_length=50)
+    idcat = forms.ChoiceField(max_length=50)
+    idsubcat = forms.ChoiceField(max_length=50)
+    brand = forms.ChoiceField(max_length=50)
+    idvendor = forms.ChoiceField(max_length=50)
+    idcolor = forms.ChoiceField(max_length=50)
+    idphoto = forms.ImageField(max_length=100)
+    primary = forms.BooleanField()
 
 
-    sku = forms.CharField(max_length=75)
-    id_product = forms.CharField(max_length=75)
-    id_product_color = forms.CharField(max_length=50)
-    id_size = forms.CharField(max_length=4)
-    quantity = forms.CharField(max_length=8)
-    price = forms.DecimalField(max_digits=9, decimal_places=2)
+    #sku = forms.CharField(max_length=75)
+    #id_product = forms.CharField(max_length=75)
+    #id_product_color = forms.CharField(max_length=50)
+    #id_size = forms.ChoiceField(max_length=4)
+    #quantity = forms.IntegerField(max_length=8, min_value=0)
+    #price = forms.DecimalField(max_digits=9, decimal_places=2)

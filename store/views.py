@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View, ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.views.generic.edit import FormMixin
-from . models import TdtProduct, CdtColor
-from . forms import TdtProductForm
+from django.views.generic.edit import FormView
+
+from . models import (CdtCategoryPerson, CdtCategory, CdtSubcategory,
+CdtBrand, CdtVendor, CdtColor, CdtProductPhoto, TdtProduct, CdtSize,
+TdtSkuProduct)
+
+from . forms import TdtProductForm, NewProductForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 
@@ -37,6 +41,71 @@ class CrudProduct(ListView):
         #context['color'] = CdtColor.objects.all()
         #print(color + '===================')
         return context
+
+class NewProduct(FormView):
+    template_name = 'crud-product/create.html'
+    form_class = NewProductForm
+    success_url = 'crud-product.html'
+
+    def form_valid(self, form):
+        #instance CategoryPerson
+        category_person = CdtCategoryPerson(
+            tx_category_person = form.cleaned_data['idcat_person'],
+        )
+        category_person.save()
+        #instance Category
+        category = CdtCategory(
+            tx_category_name = form.cleaned_data['idcat'],
+            id_category_person = category_person,
+        )
+        category.save()
+        #instance SubCategory
+        subcategory = CdtSubcategory(
+            tx_subcategory_name = form.cleaned_data['idsubcat'],
+            id_category = category,
+        )
+        subcategory.save()
+        #instance Brand
+        brand = CdtBrand(
+            tx_brand_name = form.cleaned_data['brand'],
+        )
+        brand.save()
+        #instance Vendor
+        vendor = CdtVendor(
+            tx_name_vendor = form.cleaned_data['idvendor'],
+        )
+        vendor.save()
+        #instance Color
+        color = CdtColor(
+            tx_name_color = form.cleaned_data['idcolor'],
+        )
+        color.save()
+        #instance Photo
+        photo = CdtProductPhoto(
+            tx_url_photo = form.cleaned_data['idphoto'],
+            bl_primary = form.cleaned_data['primary']
+        )
+        photo.save()
+
+        name = form.cleaned_data['name']
+        description = form.cleaned_data['description']
+
+        TdtProduct.objects.create(
+            tx_product_name = name,
+            tx_description = description,
+            id_category_person = category_person,
+            id_category = category,
+            id_subcategory = subcategory,
+            id_brand = brand,
+            id_vendor = vendor,
+            id_color = color,
+            id_photo = photo,
+        )
+        return super(NewProduct, self).form_valid(form)
+
+
+
+
 
     #Renderizando el template y pasando el context
     #def get(self, request, *args, **kwargs):

@@ -48,7 +48,7 @@ class CdtBrand(models.Model):
 class CdtVendor(models.Model):
     tx_name_vendor = models.CharField('Vendor', max_length=50)
     nm_phone_number_vendor = models.CharField('Phone Number', max_length=10, blank=True, null=True)
-    tx_description = models.CharField('Description', max_length=50)
+    tx_description = models.CharField('Description', max_length=50, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Vendor'
