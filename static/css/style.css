@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --primary-color-light-2:rgba(173, 52, 52, .6);
   --primary-color: #AD3434;
@@ -6,11 +7,14 @@
   --secondary-color: #101D2C;
   --bk-light-color: #fff;
   --color-text: #2D2D2D;
+  --color-text-light-black-1: #393939;
+  --color-text-light-black-2: #737373;
   --light-gray-1: #F9F7F6;
   --light-gray-2: #AAA;
   --dark-gray-1: #54483A;
   --dark-gray-2: #6D5D4B;
   --font-primary: "Nunito";
+  --font-secondary: "Quicksand";
   --font-display: "Josefin Sans", sans-serif;
 }
 
@@ -42,7 +46,7 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   color: var(--gray-dark-2);
   font-weight: 300;
   line-height: 1.6;
@@ -89,6 +93,46 @@ body {
   overflow: hidden;
   padding-top: 6rem;
   transition: height 0.4s cubic-bezier(0.92, -0.72, 0.55, 1.69);
+}
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/*
+
+    breadcrumb navigation provide links back to each
+    previous page the user navigated through, and shows 
+    the user's current location in a website.
+
+*/
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+  color: var(--color-text-light-black-2);
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: var(--color-text-light-black-1);
+  content: "/ ";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: var(--color-text-light-black-1);
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
 }
 
 .gallery {
@@ -423,6 +467,30 @@ body {
 
 .detail__list {
   list-style: none;
+}
+
+.colorSection li {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.colorSection span {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#black {
+  background-color: black;
+}
+
+#red {
+  background-color: red;
 }
 
 .btn--shop {

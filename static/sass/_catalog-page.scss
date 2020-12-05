@@ -50,6 +50,23 @@
     list-style: none;
 }
 
+
+.colorSection li{
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.colorSection span{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+#blue{background-color: blue;}
+#black{background-color: black;}
+#red{background-color: red;}
+
 .btn--shop{
     padding: 1rem;
     background: var(--primary-color);

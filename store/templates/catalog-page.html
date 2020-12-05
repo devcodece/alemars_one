@@ -1,6 +1,12 @@
 {% extends 'main.html'%}
 {% load static %}
 {% block content %}
+<section>
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li>Catalog page</li>
+    </ul>
+</section>
 
 <section class="catalog">
 
@@ -17,6 +23,11 @@
                 <li>Price: </li>                        
             </ul>
         </div>
+        <ul class="colorSection">
+            <li> <span id="blue"></span> </li>
+            <li> <span id="red"></span> </li>
+            <li> <span id="black"></span> </li>
+        </ul>
         <button class="btn--shop">Shop now</button>
     </div>
 
@@ -29,11 +40,17 @@
         </span>
         <div class="catalog__detail">
             <ul class="detail__list">
-                <li>Product name: </li>
-                <li>Price: </li>                        
+                <li>Dress beach</li>
+                <li>$ 35.50</li>                        
             </ul>
         </div>
-        <button class="btn--shop">Shop now</button>
+
+        <ul class="colorSection">
+            <li> <span id="blue"></span> </li>
+            <li> <span id="red"></span> </li>
+            <li> <span id="black"></span> </li>
+        </ul>
+        
     </div>
 
     <div class="catalog__product">
