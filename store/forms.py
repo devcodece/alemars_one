@@ -58,12 +58,12 @@ class TdtProductForm(forms.ModelForm):
 class NewProductForm(forms.Form):
     name = forms.CharField(max_length=75)
     description = forms.CharField(max_length=300)
-    idcat_person = forms.ChoiceField(max_length=50)
-    idcat = forms.ChoiceField(max_length=50)
-    idsubcat = forms.ChoiceField(max_length=50)
-    brand = forms.ChoiceField(max_length=50)
-    idvendor = forms.ChoiceField(max_length=50)
-    idcolor = forms.ChoiceField(max_length=50)
+    idcat_person = forms.ChoiceField()
+    idcat = forms.ChoiceField()
+    idsubcat = forms.ChoiceField()
+    brand = forms.ChoiceField()
+    idvendor = forms.ChoiceField()
+    idcolor = forms.ChoiceField()
     idphoto = forms.ImageField(max_length=100)
     primary = forms.BooleanField()
 

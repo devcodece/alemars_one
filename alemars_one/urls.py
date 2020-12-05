@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from store.views import home, CrudProduct, ProductCatalogList
+from store.views import home, CrudProduct, ProductCatalogList, NewProduct
 #CreateProduct, UpdateProduct, DeleteProduct, ProductCatalogView,
 # 
 #step_two, catalog_page,
@@ -30,7 +30,7 @@ urlpatterns = [
     
 
     #CRUD
-    #path('create', CreateProduct.as_view(), name = 'create'),
+    path('create', NewProduct.as_view(), name = 'create'),
     path('crud-product',CrudProduct.as_view(),name='crud-product'),
     #path('edit-product/<int:pk>',UpdateProduct.as_view(), name='edit-product'),
     #path('delete/<int:pk>',DeleteProduct.as_view(), name='delete')

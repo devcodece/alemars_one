@@ -49,10 +49,11 @@ class NewProduct(FormView):
 
     def form_valid(self, form):
         #instance CategoryPerson
-        category_person = CdtCategoryPerson(
-            tx_category_person = form.cleaned_data['idcat_person'],
-        )
-        category_person.save()
+        category_person = CdtCategoryPerson.objects.all()
+        #category_person = CdtCategoryPerson(
+            #tx_category_person = form.cleaned_data['idcat_person'],
+        #)
+        #category_person.save()
         #instance Category
         category = CdtCategory(
             tx_category_name = form.cleaned_data['idcat'],

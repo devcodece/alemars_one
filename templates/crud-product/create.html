@@ -8,22 +8,38 @@
                         <div class="myLeftCtn">
                             <form action="{% url 'create' %}" class="myForm" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                <div class="form-group">
-                                    {{ form.tx_product_name }}
-                                </div>
-                                <div class="form-group">
-                                    {{ form.tx_description }}
+                                <div class="row">
+                                    <div class="form-group">
+                                        {{ form.name }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.description }}
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            {{ form.gender }}
+                                            {{ form.idcat_person }}
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            {{ form.nm_sale_unit }}
+                                            {{ form.idcat }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Subcategory:</label>
+                                            {{ form.idsubcat }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Brand:</label>
+                                            {{ form.brand }}
                                         </div>
                                     </div>
                                 </div>
@@ -31,39 +47,27 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Vendor:</label>
-                                            {{ form.id_vendor }}
+                                            {{ form.idvendor }}
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Brand:</label>
-                                            {{ form.id_brand }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Color:</label>
-                                            {{ form.color }}
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Subcategory:</label>
-                                            {{ form.id_subcategory }}
+                                            {{ form.idcolor }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Size:</label>
-                                            {{ form.size }}
+                                            <label for="">Photo:</label>
+                                            {{ form.idphoto }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label for="">Primary:</label>
+                                            {{ form.primary }}
                                         </div>
                                     </div>
                                 </div>
@@ -72,14 +76,14 @@
                                     <div class="col-md-6 mb-2">
                                         <div class="custom-file">
                                             <!-- <label class="col-sm-2 mr-2" for="">Photo:</label> -->
-                                            {{ form.img_photo1 }}
+                                            
                                             <label class="custom-file-label" for="id_img_photo1">Choose image one</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="custom-file">
                                             <!-- <label class="col-sm-2 mr-2" for="">Photo:</label> -->
-                                            {{ form.img_photo2 }}
+                                            
                                             <label class="custom-file-label" for="id_img_photo2">Choose image two</label>
                                         </div>
                                     </div>
@@ -89,7 +93,7 @@
                                     <div class="col-md-6">
                                         <div class="custom-file">
                                             <!-- <label class="col-sm-2 mr-2" for="">Photo:</label> -->
-                                            {{ form.img_photo3 }}
+                                            
                                             <label class="custom-file-label" for="id_img_photo3">Choose image three</label>
                                         </div>
                                     </div>
