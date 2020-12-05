@@ -15,6 +15,9 @@ from django.core.paginator import Paginator
 def home(request):
     return render(request, 'home.html')
 
+def new_product(request):
+    return render(request, 'new-product.html')
+
 class CrudProduct(ListView):
     model = TdtProduct
     #model_two = CdtColor
