@@ -1,11 +1,98 @@
-<section>
-    <h1>Product detail</h1>
-    </section>
-    
-    <section>
-    <h1>Product Color</h1>
-    </section>
-    
-    <section>
-    <h1>Product SKU</h1>
-    </section>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main class="form__sec-product wrapper-forms">
+        <!-- Select colors-->
+        <section class="form__sec-product--info">
+
+                <div class="form-group full-width">
+                    <label for="product-category">Product name</label>
+                    <input type="text" name="product-category" id="product-category">
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-category">Person</label>
+                    <select class="full" name="select-person-category" id="select-person-category">
+                        <option value="0">Choose person</option>
+                        <option value="women">Women</option>
+                        <option value="men">Men</option>
+                    </select>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="product-category">Product category</label>
+                    <select class="full" type="text" name="product-category" id="product-category">
+                        <option value="0">Choose category</option>
+                        <option value="shirt">Shirt</option>
+                        <option value="pans">Pans</option>
+                    </select>
+                </div>
+            
+            
+            
+                <div class="form-group">
+                    <label for="product-subcategory">Product Sub-Category</label>
+                    <select class="full" type="text" name="product-subcategory" id="product-subcategory">
+                        <option value="0">Choose sub-category</option>
+                        <option value="top">Top</option>
+                        <option value="casual-shirt">Casual shirt</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-vendor">Product vendor</label>
+                    <select class="full" type="text" name="product-vendor" id="product-vendor">
+                        <option value="0">Choose vendor</option>
+                        <option value="MB">Miguel Bustamante</option>
+                        <option value="JP">Juan Perez</option>
+                    </select>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="product-description">Description</label>
+                    <input type="text" name="product-description" id="product-description">
+                </div>
+            
+                <button class="btn--shop full-width" type="submit" id="btnSaveInfo">Next</button>
+                         
+                                
+        
+        </section>
+        
+            <!-- Select colors-->
+            <section class="form__sec-product--color full-width">
+                <label id="myLabel" for="colors">Choose a color:</label>
+                <select name="colors" id="colors">
+                    <option selected>Choose</option>
+                    <option value="blue">Blue</option>
+                    <option value="black">Black</option>
+                    <option value="red">Red</option>
+                </select>
+                <button type="button" id="addProdColor">Add product color</button>
+                <table id="productColorTable">
+                    <thead>
+                        <tr>
+                            <th>product color:</th>
+
+                        </tr>
+                    </thead>
+                </table>
+            </section>
+
+
+            <section class="form__sec-product--sku">
+                <h1>SKU PRODUCT</h1>
+            </section>
+
+    </main>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

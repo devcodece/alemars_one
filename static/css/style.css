@@ -13,12 +13,8 @@
   --light-gray-2: #AAA;
   --dark-gray-1: #54483A;
   --dark-gray-2: #6D5D4B;
-<<<<<<< HEAD
   --font-primary: "Nunito";
   --font-secondary: "Quicksand";
-=======
-  --font-primary: "Quicksand";
->>>>>>> carlos
   --font-display: "Josefin Sans", sans-serif;
 }
 
@@ -50,7 +46,7 @@ html {
 }
 
 body {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   color: var(--gray-dark-2);
   font-weight: 300;
   line-height: 1.6;
@@ -256,6 +252,7 @@ ul.breadcrumb li a:hover {
 .nw-product__price {
   grid-column: 2/3;
 }
+
 /************************************ Buttons ****************************/
 .btn:link, .btn:visited {
   display: inline-block;
@@ -282,6 +279,50 @@ ul.breadcrumb li a:hover {
 .icon-search {
   display: block;
   height: 20px;
+}
+
+/************************************ forms ****************************/
+.wrapper-forms {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.form__sec-product {
+  margin: auto;
+  background-color: #f3f3f3;
+  border: 1px solid gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  row-gap: 10px;
+}
+.form__sec-product--info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+}
+@media screen and (max-width: 310px) {
+  .form__sec-product--info {
+    grid-template-columns: 1fr;
+  }
+}
+.form__sec-product--color, .form__sec-product--sku {
+  display: none;
+}
+
+.full-width {
+  grid-column: 1/-1;
+}
+
+.full {
+  width: 100%;
+}
+
+input {
+  width: 100%;
 }
 
 .header {

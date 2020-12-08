@@ -92,10 +92,6 @@
         grid-column: 2 /3;
     }
 
-    &__display-more{
-
-    }
-    
 }
 
 
@@ -147,3 +143,59 @@
     height: 20px;
 }
 
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+/************************************ forms ****************************/
+//////////////////////////////////////////////////////////////////////////
+
+
+.wrapper-forms{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.form__sec-product{   
+    margin: auto;
+    background-color: #f3f3f3;
+    border: 1px solid gray;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.4);
+    row-gap: 10px;
+
+    &--info{
+        display: grid;    
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 10px;
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.4);
+        background-color: white;
+        margin: 20px;
+        padding: 20px;
+        
+    }
+    @media screen and (max-width: 310px){
+        &--info{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &--color,
+    &--sku{
+        display: none;
+    }
+    
+}
+
+
+.full-width{
+    grid-column: 1 / -1;    
+}
+.full{
+    width: 100%;
+}
+
+input{
+    width: 100%;
+}

@@ -15,17 +15,13 @@
 
 html{
     font-family: 'Quicksand', sans-serif;
-<<<<<<< HEAD
-    //font-family: 'Nunito', sans-serif;
-=======
->>>>>>> carlos
     box-sizing: border-box;
     font-size: 62.5%; // 10 / 16 = 62.5% -> 1rem = 10px
     font-weight: 300; 
 }
 
 body{
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     color: var(--gray-dark-2);
     font-weight: 300;
     line-height: 1.6;
